@@ -1,7 +1,7 @@
 var url = new URLSearchParams(window.location.search);
 var params = Object.fromEntries(url.entries());
 var digimons = params["name"];
-
+//*/
 console.log(digimons);
 
 var consumo = fetch("https://digimon-api.vercel.app/api/digimon/name:" + digimons);
