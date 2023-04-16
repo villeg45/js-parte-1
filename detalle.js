@@ -1,11 +1,11 @@
 var url = new URLSearchParams(window.location.search);
 var params = Object.fromEntries(url.entries());
 var digimons = params["name"];
-//*/
+/** / */
+/** / */
 console.log(digimons);
-
-var consumo = fetch("https://digimon-api.vercel.app/api/digimon/name:" + digimons);
-var section = document.GetElementById("digimons")
+var consumo = fetch("https://digimon-api.vercel.app/api/digimon/name/" + digimons);
+var section = document.getElementById("digimons");
 
 consumo.then(function(respuesta) {
   return respuesta.json();
@@ -23,7 +23,8 @@ consumo.then(function(respuesta) {
       '<span>' + datos[i].level + '</span>' +
       '</a>';
   }
-
-  digimons.innerHTML = html;
+  // inserta todo el html a mostrarse
+  section.innerHTML = html;
 
 });
+
